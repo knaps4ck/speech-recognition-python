@@ -37,9 +37,9 @@ def myCommand():
 
 
 def assistant(command):
-    if 'open Reva' in command:
-        SpeakUp('Opening reva webpage')
-        url = 'https://www.reva.edu.in/'
+    if 'open google' in command:
+        SpeakUp('Opening google webpage')
+        url = 'https://www.google.com/'
         webbrowser.open(url)
         print('Done!')
 
