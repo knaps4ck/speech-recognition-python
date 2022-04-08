@@ -8,12 +8,14 @@ import smtplib
 from datetime import time
 from datetime import datetime
 from datetime import date
+from playsound import playsound
 
 
 def SpeakUp(audio):
-    tts = gTTS(text=audio, lang='en-au')
+    tts = gTTS(text=audio, lang='en-us')
+    os.remove("audio.mp3")    
     tts.save('audio.mp3')
-    os.system('start audio.mp3')
+    playsound('audio.mp3')
     
 
 def myCommand():
@@ -57,7 +59,7 @@ def assistant(command):
         new = 2
         SpeakUp('what would you like searching for?')
         keyword = myCommand()
-        url = "https://google.com/?#q="
+        url = "https://google.com/search?q="
         webbrowser.open(url+keyword,new=new)
         SpeakUp('Here are some results for your request')
     elif 'open Notepad' in command:
